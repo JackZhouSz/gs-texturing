@@ -283,8 +283,8 @@ class Trainer:
         else:
             Lalpha_regul = (self.gmodel.get_opacity * self.visibility_filter.view(-1, 1)).mean()
 
-        Ltexture_regul = (self.gmodel.texture_offsets.abs() * self.gmodel._texture_map.create_jagged_mask(self.visibility_filter).view(-1, 1)).sum()
-        # Ltexture_regul = (self.gmodel.texture_offsets.abs() * (1-self.out_weight.detach()).repeat_interleave(repeats=torch.prod(self.gmodel._texture_map._sizes, dim=1).int()).view(-1, 1) * self.gmodel._texture_map.create_jagged_mask(self.visibility_filter).view(-1, 1)).sum()
+        # Ltexture_regul = (self.gmodel.texture_offsets.abs() * self.gmodel._texture_map.create_jagged_mask(self.visibility_filter).view(-1, 1)).sum()
+        Ltexture_regul = (self.gmodel.texture_offsets.abs() * (1-self.out_weight.detach()).repeat_interleave(repeats=torch.prod(self.gmodel._texture_map._sizes, dim=1).int()).view(-1, 1) * self.gmodel._texture_map.create_jagged_mask(self.visibility_filter).view(-1, 1)).sum()
 
         Ll1 = l1_loss(self.image, gt_image)
         ssim_loss = 1.0 - ssim(self.image, gt_image)
