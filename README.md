@@ -1,6 +1,6 @@
 # Content-Aware Texturing for Gaussian Splatting
 Panagiotis Papantonakis, Georgios Kopanas, Frédo Durand, George Drettakis<br>
-| [Webpage](https://repo-sam.inria.fr/nerphys/gs-texturing/) | [Full Paper](https://repo-sam.inria.fr/nerphys/gs-texturing/ContentAwareTexturedGaussians-authors.pdf) || [Other GRAPHDECO Publications](http://www-sop.inria.fr/reves/publis/gdindex.php) | [NERPHYS project page](https://project.inria.fr/nerphys/) | <br>
+| [Webpage](https://repo-sam.inria.fr/nerphys/gs-texturing/) | [Full Paper](https://repo-sam.inria.fr/nerphys/gs-texturing/ContentAwareTexturedGaussians-authors.pdf) | [Arxiv](https://arxiv.org/abs/2512.02621) | [Other GRAPHDECO Publications](http://www-sop.inria.fr/reves/publis/gdindex.php) | [NERPHYS project page](https://project.inria.fr/nerphys/) | <br>
 ![Teaser image](assets/teaser.png)
 
 This repository contains the code of the paper "Content-Aware Texturing for Gaussian Splatting", which can be found [here](https://repo-sam.inria.fr/nerphys/gs-texturing).
@@ -8,7 +8,7 @@ We also provide the configurations to train the models mentioned in the paper,
 as well as the evaluation script that produces the results.
 
 The project's code is based on the original 3DGS project that you can find [here](https://github.com/graphdeco-inria/gaussian-splatting).
-Two main differences are that there has been a major refactoring of the `train.py` file that was aimed to increase readability and extensibility.
+Two main differences are that there has been a major refactoring of the `train.py` file that was aimed to increase readability and extensibility and a similar refactoring of the CUDA code, to better match the equations provided in the original paper (vectors treated as columns, instead of rows).
 
 <a href="https://www.inria.fr/"><img height="100" src="assets/logo_inria.png"> </a>
 <a href="https://univ-cotedazur.eu/"><img height="100" src="assets/logo_uca.png"> </a>
